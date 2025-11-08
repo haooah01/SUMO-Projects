@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+    <!-- Vehicle types -->
+    <!-- maxSpeed values are in m/s for SUMO. Converted from km/h -> m/s: 100 km/h = 27.78 m/s, 50 km/h = 13.89 m/s -->
+    <vType id="Car100" accel="1.0" decel="5.0" length="2.0" maxSpeed="27.78" sigma="0.0" />
+    <vType id="Car50" accel="1.0" decel="5.0" length="2.0" maxSpeed="13.89" sigma="0.0" />
+
+    <!-- Routes: left-to-right and right-to-left -->
+    <route id="r_l2r" edges="1to2 out" />
+    <route id="r_r2l" edges="3to2 2to1" />
+
+    <!-- Vehicles: using MSSV suffix n = 53 -->
+    <!-- Sorted by depart time (required by SUMO) -->
+    <!-- Right -> Left: depart 53 -->
+    <vehicle id="veh3" type="Car50" route="r_r2l" depart="53" />
+
+    <!-- Left -> Right: depart 153 -->
+    <vehicle id="veh0" type="Car100" route="r_l2r" depart="153" />
+
+    <!-- Right -> Left: depart 158 -->
+    <vehicle id="veh4" type="Car50" route="r_r2l" depart="158" />
+
+    <!-- Right -> Left: depart 168 -->
+    <vehicle id="veh5" type="Car50" route="r_r2l" depart="168" />
+
+    <!-- Left -> Right: depart 173 and 183 -->
+    <vehicle id="veh1" type="Car100" route="r_l2r" depart="173" />
+    <vehicle id="veh2" type="Car100" route="r_l2r" depart="183" />
+</routes>
